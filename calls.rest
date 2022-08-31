@@ -1,0 +1,22 @@
+
+
+// Get all burgers
+
+GET http://localhost:4000/burgers
+
+
+###
+
+
+// Add a  new burger
+POST http://localhost:4000/burgers
+Content-Type: application/json
+
+{
+   
+    "Name": "Test Burger",
+    "Price": 210
+}
+
+
+###
