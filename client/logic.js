@@ -1,6 +1,7 @@
 
 
 async function onLoad() {
+
 	await getBurgers()
 	
 	
@@ -35,16 +36,26 @@ async function getBurgerstore() {
 }
 
 
+
+    await getBurgers()
+ 
+}
+
+
 const getBurgers = async (event) => {
 
     try {
         
+
 		//clean
 		document.getElementById("burger").innerHTML = "";
        // document.getElementById("cart").innerHTML=""
 		
 		
         const response = await fetch("http://localhost:8000/burgers")
+
+        const response = await fetch("http://localhost:3001/burgers")
+
         const data = await response.json()
         console.log(data)
 
@@ -57,8 +68,12 @@ const getBurgers = async (event) => {
         burgersContainer.classList.add("burgerDiv")
         let title = document.createElement("a")
 
+
         //cambiato qua 
         title.innerHTML =  burgers.Name + " / " + burgers.Price + ":- Sek"
+
+        title.innerHTML = burgers.Name + burgers.Price
+
         container.append(burgersContainer)
         burgersContainer.append(title) 
         
@@ -68,6 +83,7 @@ const getBurgers = async (event) => {
         console.error(err)
     }
 }
+
 /*
 const getOrders = async (event) => {
 
@@ -127,6 +143,21 @@ const addBurgers = async (event) => {
         
         
         const response = await fetch("http://localhost:8000/burgers", {
+
+
+const addBurgers = async (event) => {
+    
+    try {
+        
+        const newBurger = {
+            Name: "Veggie Burger",
+            Price: 276
+        }
+
+
+        
+        const response = await fetch("http://localhost:3001/burgers", {
+
             method: "POST", 
             headers: { "Content-Type": "application/json"}, 
             body: JSON.stringify(newBurger)
@@ -135,8 +166,12 @@ const addBurgers = async (event) => {
         
         const data = await response.json()
             console.log(data)
+
             //cambio
             getBurgers()	//refresh UI
+
+
+
         } catch(err) {
             console.error(err)
         }
@@ -148,7 +183,14 @@ const addBurgers = async (event) => {
     
 document.getElementById("createBtn").addEventListener("click", getBurgers)
 document.getElementById("collectBtn").addEventListener("click", addBurgers)
+
 //document.getElementById("sOrderBtn").addEventListener("click", getOrders)
 document.getElementById("gExtBtn").addEventListener("click", getBurgerstore)
 window.addEventListener('load', onLoad) 
 window.addEventListener("load", getOrders)
+
+window.addEventListener('load', onLoad) 
+
+
+    
+
