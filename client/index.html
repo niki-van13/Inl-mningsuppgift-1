@@ -1,5 +1,8 @@
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,14 @@
     <link rel="stylesheet" href="style.css">
     <title>Burger Menu</title>
     <script defer type="module" src="logic.js"></script>
+
+        <div id="polina">
+        <h1><center>Choose your favorit burger</center></h1>
+        <button id="createBtn">Get Burger List</button>
+        <input id="burgerName" placeholder="Type Burger name" type="text"><input id="burgerPrice" placeholder="Type Burger price" type="text"><button id="collectBtn">Save Order</button>
+		
+		<button id="gExtBtn">Get Extern Burger's</button>
+
     <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
       <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
         <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
@@ -19,11 +30,24 @@
         <h1>Choose your favorit burger</h1>
         <button id="createBtn">Get Burger</button>
         <button id="collectBtn">Save Burger</button>
+
         </div>
 </head>
 <body>
   
     <div class="container">
+
+		<h2 id="cart">Burger List</h2>
+        <h1 id="burger"></h1>
+        
+	
+        <h2 id="cart"></h2>
+	  <!--------  <h1 id="Orderburger"></h1>--->
+    </div>		
+	<div class="storecontainer">
+        <h2><span class="bstore">BurgerStore Link </span></h2>
+	    <div id="Extburger" class="linktext" ></div>
+
         <h1 id="cart"></h1>
         <h1 id="burger"></h1>
         
