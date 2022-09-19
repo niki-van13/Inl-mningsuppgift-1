@@ -1,0 +1,21 @@
+
+// Get BurgerStore list & info
+GET http://localhost:8000/api/burgers
+
+// Get all burgers
+
+GET http://localhost:8000/burgers
+
+// Get Orders
+GET http://localhost:8000/orders
+
+// Add a  new burger order ( 1-3)
+POST http://localhost:8000/burgers
+Content-Type: application/json
+
+{
+    "name: TestBurger ", "Price: 10"
+} 
+
+
+###
